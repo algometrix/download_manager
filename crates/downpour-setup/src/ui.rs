@@ -15,14 +15,19 @@ use crate::report::{LogLine, SetupReport};
 use crate::running::{self, RunningProgram, StillRunning};
 use crate::Mode;
 
-const INK: Color32 = Color32::from_rgb(0x1E, 0x21, 0x42);
-const INK_SOFT: Color32 = Color32::from_rgb(0x6B, 0x70, 0x90);
-const PRIMARY: Color32 = Color32::from_rgb(0x5B, 0x4F, 0xE0);
-const PRIMARY_SOFT: Color32 = Color32::from_rgb(0xEE, 0xEC, 0xFD);
-const DANGER: Color32 = Color32::from_rgb(0xE5, 0x48, 0x4D);
+// The light Downpour look: slate ink and the coral of the icon.
+const INK: Color32 = Color32::from_rgb(0x2B, 0x2E, 0x34);
+const INK_SOFT: Color32 = Color32::from_rgb(0x6B, 0x6F, 0x78);
+const PRIMARY: Color32 = Color32::from_rgb(0xF8, 0x61, 0x5A);
+const PRIMARY_SOFT: Color32 = Color32::from_rgb(0xFD, 0xEC, 0xEB);
+const DANGER: Color32 = Color32::from_rgb(0xD9, 0x3A, 0x3F);
 const SUCCESS: Color32 = Color32::from_rgb(0x1F, 0xA9, 0x7A);
 const WARNING: Color32 = Color32::from_rgb(0xB4, 0x5F, 0x06);
-const BACKDROP: Color32 = Color32::from_rgb(0xEE, 0xF0, 0xF7);
+const BACKDROP: Color32 = Color32::from_rgb(0xF2, 0xF3, 0xF5);
+const OUTLINE: Stroke = Stroke {
+    width: 1.0,
+    color: Color32::from_rgb(0xE3, 0xE5, 0xE9),
+};
 
 enum Page {
     InstallOptions(OptionsForm),
@@ -324,7 +329,7 @@ fn secondary(ui: &mut Ui, label: &str) -> bool {
     ui.add(
         egui::Button::new(RichText::new(label).size(14.5).color(INK))
             .fill(Color32::WHITE)
-            .stroke(Stroke::new(1.0, Color32::from_rgb(0xE7, 0xE9, 0xF3)))
+            .stroke(OUTLINE)
             .corner_radius(CornerRadius::same(10))
             .min_size(egui::vec2(0.0, 36.0)),
     )
@@ -354,7 +359,7 @@ fn install_options(ui: &mut Ui, form: &mut OptionsForm) -> Option<Action> {
     ui.label(RichText::new("Install to").strong().color(INK));
     ui.horizontal(|ui| {
         egui::Frame::new()
-            .stroke(Stroke::new(1.0, Color32::from_rgb(0xE7, 0xE9, 0xF3)))
+            .stroke(OUTLINE)
             .corner_radius(CornerRadius::same(10))
             .inner_margin(egui::Margin::symmetric(10, 8))
             .show(ui, |ui| {
