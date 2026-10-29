@@ -1,0 +1,12 @@
+[package]
+name = "downpour-build"
+description = "Build-script helper: the icon, version details, and manifest every Downpour executable carries on Windows"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish = false
+
+[dependencies]
+winresource.workspace = true
+downpour-protocol.workspace = true

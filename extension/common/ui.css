@@ -1,0 +1,284 @@
+/* Shared look for the popup and options page: a dark slate dashboard with a
+   coral accent for actions and positive states and a yellow second accent. */
+:root {
+  color-scheme: dark;
+  --backdrop: #40444b;
+  --surface: #4a4e56;
+  --surface-raised: #555a63;
+  --surface-sunken: #383c42;
+  --ink: #ffffff;
+  --ink-soft: #b4b8c0;
+  --ink-faint: #8d929b;
+  --coral: #f8615a;
+  --coral-hover: #ff736c;
+  --coral-soft: rgba(248, 97, 90, 0.18);
+  --sun: #f6e04b;
+  --sun-soft: rgba(246, 224, 75, 0.16);
+  --radius-card: 14px;
+  --radius-pill: 999px;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--backdrop);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+h1,
+h2 {
+  margin: 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand img {
+  width: 34px;
+  height: 34px;
+}
+
+.brand-name {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.brand-tagline {
+  color: var(--ink-faint);
+  font-size: 12px;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+/* Small rounded labels, like the dashboard's period pickers. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  padding: 3px 10px;
+  background: var(--surface-sunken);
+  color: var(--ink-soft);
+  font-size: 11.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  border-radius: var(--radius-pill);
+  padding: 4px 11px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--surface-sunken);
+  color: var(--ink-soft);
+}
+
+.chip::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.chip[data-state="connected"] {
+  background: var(--coral-soft);
+  color: var(--coral);
+}
+
+.chip[data-state="error"] {
+  background: var(--sun-soft);
+  color: var(--sun);
+}
+
+/* Buttons size to their label; long labels wrap instead of overflowing. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--surface-raised);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  cursor: pointer;
+  white-space: normal;
+  transition: background 0.15s;
+}
+
+.button:hover {
+  background: #61666f;
+}
+
+.button.primary {
+  background: var(--coral);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(248, 97, 90, 0.28);
+}
+
+.button.primary:hover {
+  background: var(--coral-hover);
+}
+
+.button:focus-visible,
+.field:focus-visible,
+.switch input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--sun);
+  outline-offset: 2px;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: default;
+  box-shadow: none;
+}
+
+.field {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 9px 16px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--surface-sunken);
+}
+
+.field::placeholder {
+  color: var(--ink-faint);
+}
+
+textarea.field {
+  border-radius: var(--radius-card);
+  resize: vertical;
+  min-height: 76px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.switch input {
+  appearance: none;
+  flex: none;
+  width: 40px;
+  height: 22px;
+  margin: 0;
+  border-radius: var(--radius-pill);
+  background: var(--surface-sunken);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.switch input::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink-soft);
+  transition: transform 0.15s, background 0.15s;
+}
+
+.switch input:checked {
+  background: var(--coral);
+}
+
+.switch input:checked::after {
+  background: #fff;
+  transform: translateX(18px);
+}
+
+.muted {
+  color: var(--ink-soft);
+}
+
+.notice {
+  margin: 0;
+  border-radius: var(--radius-card);
+  padding: 11px 14px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.notice[data-kind="success"] {
+  background: var(--coral-soft);
+}
+
+.notice[data-kind="error"] {
+  background: var(--sun-soft);
+  color: var(--sun);
+}
+
+code {
+  border-radius: 6px;
+  padding: 1px 6px;
+  background: var(--surface-sunken);
+  color: var(--sun);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .switch input,
+  .switch input::after {
+    transition: none;
+  }
+}

@@ -1,0 +1,29 @@
+# Build output.
+/target
+/dist
+web-ext-artifacts/
+# Partial download files.
+*.dppart
+# Private keys and certificates.
+*.pem
+*.key
+*.pfx
+*.p12
+# addons.mozilla.org signing keys (JWT_issuer / JWT_secret) and other local secrets.
+*.env
+.env.*
+# Personal working notes and local tool settings.
+/TODO.md
+/NOTES.md
+/notes/
+*.local.md
+.claude/settings.local.json
+# Editor and OS files.
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+# Extension test dependencies.
+node_modules/
+# Python caches.
+__pycache__/

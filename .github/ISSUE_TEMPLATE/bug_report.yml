@@ -1,0 +1,62 @@
+name: Bug report
+description: Something in Downpour or its Firefox add-on does not work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug.
+        Please do not paste private download links, cookies, passwords, or other personal details.
+        Replace them with something like `https://example.com/file.zip`.
+  - type: input
+    id: version
+    attributes:
+      label: Downpour version
+      description: Shown in Settings, or in the Properties of downpour.exe (Details tab).
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: "Windows 11 24H2"
+    validations:
+      required: true
+  - type: input
+    id: firefox
+    attributes:
+      label: Firefox and add-on version
+      description: Only if the bug involves the browser. See about:addons.
+      placeholder: "Firefox 131, add-on 1.0.0"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead
+      description: Include any error message shown in the app or the add-on.
+    validations:
+      required: true
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: |
+        The app writes `downpour.log` in `%LOCALAPPDATA%\Downpour\Downpour\data`.
+        Paste the lines from around the time of the problem, after removing anything private.
+      render: text

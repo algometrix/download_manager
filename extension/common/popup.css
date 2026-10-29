@@ -1,0 +1,136 @@
+/* Browsers cap popups at 600px tall and clip what grows past that after
+   the popup opened, without a scroll bar. The popup stays within the cap:
+   header and footer keep their place, and the sections between them scroll. */
+body {
+  width: 370px;
+  max-height: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-header {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 18px 18px 8px;
+}
+
+.popup-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 10px 14px 14px;
+  scrollbar-color: var(--surface-raised) transparent;
+  scrollbar-width: thin;
+}
+
+.popup-footer {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 18px 16px;
+  background: var(--surface-sunken);
+}
+
+.options-link {
+  color: var(--ink-soft);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.options-link:hover {
+  color: var(--coral);
+}
+
+.switch strong {
+  font-size: 14px;
+}
+
+#permission-card .button {
+  margin-top: 10px;
+}
+
+#permission-card p {
+  margin: 0;
+}
+
+#link-form .field {
+  flex: 1;
+}
+
+.media-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.media-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+/* Plain media files get the yellow accent, streams the coral one. */
+.media-badge {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: var(--sun-soft);
+  color: var(--sun);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.media-badge[data-kind="stream"] {
+  background: var(--coral-soft);
+  color: var(--coral);
+}
+
+.media-text {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+}
+
+.media-name,
+.media-meta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.media-name {
+  font-weight: 700;
+}
+
+.media-meta {
+  color: var(--ink-faint);
+  font-size: 12px;
+}
+
+.media-download {
+  flex: none;
+  min-height: 30px;
+  padding: 5px 13px;
+  font-size: 12px;
+}
+
+#media-empty {
+  margin: 0;
+}

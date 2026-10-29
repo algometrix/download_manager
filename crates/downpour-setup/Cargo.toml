@@ -1,0 +1,41 @@
+[package]
+name = "downpour-setup"
+description = "Windows installer and uninstaller for Downpour"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+build = "build.rs"
+
+[[bin]]
+name = "Downpour-Setup"
+path = "src/main.rs"
+
+[dependencies]
+downpour-protocol.workspace = true
+directories.workspace = true
+eframe = { version = "0.31", default-features = false, features = ["default_fonts", "glow"] }
+rfd = "0.15"
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+winreg.workspace = true
+# Shortcuts with an AppUserModelID, and finding and stopping programs that
+# run from the install folder.
+windows = { version = "0.62", features = [
+    "Win32_Storage_EnhancedStorage",
+    "Win32_System_Com",
+    "Win32_System_Com_StructuredStorage",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Ole",
+    "Win32_System_SystemInformation",
+    "Win32_System_Threading",
+    "Win32_System_Variant",
+    "Win32_UI_Shell",
+    "Win32_UI_Shell_PropertiesSystem",
+] }
+
+[build-dependencies]
+downpour-build.workspace = true

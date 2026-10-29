@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Downpour</title>
+    <link rel="stylesheet" href="ui.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="popup-header">
+      <div class="brand">
+        <img src="icons/icon-48.png" alt="" />
+        <div>
+          <div class="brand-name">Downpour</div>
+          <div class="brand-tagline">Download manager</div>
+        </div>
+      </div>
+      <span id="status" class="chip" data-state="checking">Checking…</span>
+    </header>
+
+    <main class="popup-body">
+      <p id="notice" class="notice" hidden></p>
+
+      <section class="card" id="permission-card" hidden>
+        <p class="muted">Downpour needs access to sites to capture downloads and detect media.</p>
+        <button id="grant" class="button primary" type="button">Allow access to all sites</button>
+      </section>
+
+      <section class="card">
+        <label class="switch">
+          <span>
+            <strong>Capture browser downloads</strong><br />
+            <span class="muted">Hand matching files to Downpour</span>
+          </span>
+          <input id="capture" type="checkbox" />
+        </label>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2 class="section-title">Download a link</h2>
+        </div>
+        <form id="link-form" class="row">
+          <input id="link" class="field" type="url" placeholder="https://example.com/file.zip" required />
+          <button class="button primary" type="submit">Download</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="section-head">
+          <h2 class="section-title">Media on this page</h2>
+          <span id="media-count" class="pill">0 found</span>
+        </div>
+        <ul id="media" class="media-list"></ul>
+        <p id="media-empty" class="muted">No video or audio detected yet. Start playing the video, then reopen this popup.</p>
+      </section>
+    </main>
+
+    <footer class="popup-footer">
+      <button id="open-app" class="button primary" type="button">Open Downpour</button>
+      <a id="options" href="#" class="options-link">Options</a>
+    </footer>
+
+    <template id="media-item">
+      <li class="media-item">
+        <span class="media-badge"></span>
+        <span class="media-text">
+          <span class="media-name"></span>
+          <span class="media-meta"></span>
+        </span>
+        <button class="button primary media-download" type="button">Download</button>
+      </li>
+    </template>
+
+    <script src="capture-rules.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

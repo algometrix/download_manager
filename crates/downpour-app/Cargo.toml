@@ -1,0 +1,50 @@
+[package]
+name = "downpour-app"
+description = "Downpour desktop app"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "downpour"
+path = "src/main.rs"
+
+[dependencies]
+downpour-core.workspace = true
+downpour-protocol.workspace = true
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+eframe = { version = "0.31", default-features = false, features = ["default_fonts", "glow", "persistence"] }
+getrandom.workspace = true
+rfd = "0.15"
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+url.workspace = true
+tray-icon = "0.24"
+raw-window-handle = "0.6"
+
+[target.'cfg(windows)'.dependencies]
+winreg.workspace = true
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_Graphics_Dwm",
+    "Win32_System_Power",
+    "Win32_System_Threading",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+# COM and WinRT: taskbar progress (ITaskbarList3) and notifications.
+windows = { version = "0.62", features = [
+    "Data_Xml_Dom",
+    "Foundation",
+    "UI_Notifications",
+    "Win32_System_Com",
+    "Win32_UI_Shell",
+] }
+
+[build-dependencies]
+downpour-build.workspace = true

@@ -1,0 +1,25 @@
+[package]
+name = "downpour-host"
+description = "Native messaging host connecting the Downpour Firefox extension to the app"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "downpour-host"
+path = "src/main.rs"
+
+[dependencies]
+downpour-protocol.workspace = true
+directories.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tracing.workspace = true
+tracing-subscriber.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+winreg.workspace = true
+
+[build-dependencies]
+downpour-build.workspace = true
