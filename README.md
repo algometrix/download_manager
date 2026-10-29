@@ -9,18 +9,18 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/algometrix/download_manager/releases/latest/download/Downpour-Setup.exe"><img alt="Download for Windows" src="https://img.shields.io/badge/Download_for_Windows-Downpour--Setup.exe-f8615a?style=for-the-badge&logo=windows&logoColor=white"></a>
-  <a href="https://github.com/algometrix/download_manager/releases/latest/download/downpour-firefox.xpi"><img alt="Get the Firefox add-on" src="https://img.shields.io/badge/Firefox_add--on-signed_by_Mozilla-40444b?style=for-the-badge&logo=firefoxbrowser&logoColor=white"></a>
+  <a href="https://github.com/algometrix/downpour/releases/latest/download/Downpour-Setup.exe"><img alt="Download for Windows" src="https://img.shields.io/badge/Download_for_Windows-Downpour--Setup.exe-f8615a?style=for-the-badge&logo=windows&logoColor=white"></a>
+  <a href="https://github.com/algometrix/downpour/releases/latest/download/downpour-firefox.xpi"><img alt="Get the Firefox add-on" src="https://img.shields.io/badge/Firefox_add--on-signed_by_Mozilla-40444b?style=for-the-badge&logo=firefoxbrowser&logoColor=white"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/algometrix/download_manager/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/algometrix/download_manager?style=flat-square&color=f8615a&label=release"></a>
-  <a href="https://github.com/algometrix/download_manager/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/algometrix/download_manager/total?style=flat-square&color=40444b"></a>
-  <a href="https://github.com/algometrix/download_manager/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/algometrix/download_manager/ci.yml?branch=main&style=flat-square&label=CI"></a>
+  <a href="https://github.com/algometrix/downpour/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/algometrix/downpour?style=flat-square&color=f8615a&label=release"></a>
+  <a href="https://github.com/algometrix/downpour/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/algometrix/downpour/total?style=flat-square&color=40444b"></a>
+  <a href="https://github.com/algometrix/downpour/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/algometrix/downpour/ci.yml?branch=main&style=flat-square&label=CI"></a>
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-f6e04b?style=flat-square"></a>
   <img alt="Windows 10 and 11" src="https://img.shields.io/badge/Windows-10_%7C_11-40444b?style=flat-square">
   <img alt="Built with Rust" src="https://img.shields.io/badge/built_with-Rust-f8615a?style=flat-square&logo=rust&logoColor=white">
-  <a href="https://github.com/algometrix/download_manager/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/algometrix/download_manager?style=flat-square&color=f6e04b"></a>
+  <a href="https://github.com/algometrix/downpour/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/algometrix/downpour?style=flat-square&color=f6e04b"></a>
 </p>
 
 <p align="center">
@@ -29,7 +29,7 @@
   <a href="#-how-to-use"><b>How to use</b></a> •
   <a href="#-command-line"><b>Command line</b></a> •
   <a href="#-faq"><b>FAQ</b></a> •
-  <a href="https://github.com/algometrix/download_manager/issues/new/choose"><b>Report a bug</b></a>
+  <a href="https://github.com/algometrix/downpour/issues/new/choose"><b>Report a bug</b></a>
 </p>
 
 <br>
@@ -122,9 +122,9 @@
 
 | | File | What it is |
 | --- | --- | --- |
-| 🪟 | [**Downpour-Setup.exe**](https://github.com/algometrix/download_manager/releases/latest/download/Downpour-Setup.exe) | The app for Windows 10 and 11, 64-bit. |
-| 🦊 | [**downpour-firefox.xpi**](https://github.com/algometrix/download_manager/releases/latest/download/downpour-firefox.xpi) | The Firefox add-on (Firefox 115 or newer), signed by Mozilla. |
-| 🔒 | [SHA256SUMS.txt](https://github.com/algometrix/download_manager/releases/latest/download/SHA256SUMS.txt) | Checksums of both files. |
+| 🪟 | [**Downpour-Setup.exe**](https://github.com/algometrix/downpour/releases/latest/download/Downpour-Setup.exe) | The app for Windows 10 and 11, 64-bit. |
+| 🦊 | [**downpour-firefox.xpi**](https://github.com/algometrix/downpour/releases/latest/download/downpour-firefox.xpi) | The Firefox add-on (Firefox 115 or newer), signed by Mozilla. |
+| 🔒 | [SHA256SUMS.txt](https://github.com/algometrix/downpour/releases/latest/download/SHA256SUMS.txt) | Checksums of both files. |
 
 ### 1. Install the app
 
@@ -290,7 +290,7 @@ to remove them too. To remove the add-on, open `about:addons` in Firefox.
 
 ## 🐞 Reporting bugs
 
-Found a bug or have an idea? [Open an issue](https://github.com/algometrix/download_manager/issues/new/choose).
+Found a bug or have an idea? [Open an issue](https://github.com/algometrix/downpour/issues/new/choose).
 The bug form asks for the Downpour, Windows and Firefox versions, the steps to
 reproduce it, what you expected, and the lines from `downpour.log` in
 `%LOCALAPPDATA%\Downpour\Downpour\data`.
@@ -373,10 +373,10 @@ Chrome and Edge add-ons
 
 ## ⭐ Star history
 
-<a href="https://star-history.com/#algometrix/download_manager&Date">
+<a href="https://star-history.com/#algometrix/downpour&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=algometrix/download_manager&type=Date&theme=dark">
-    <img alt="Star history chart" src="https://api.star-history.com/svg?repos=algometrix/download_manager&type=Date" width="600">
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=algometrix/downpour&type=Date&theme=dark">
+    <img alt="Star history chart" src="https://api.star-history.com/svg?repos=algometrix/downpour&type=Date" width="600">
   </picture>
 </a>
 
